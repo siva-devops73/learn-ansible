@@ -1,0 +1,6 @@
+-name: Demo playbook
+hosts: all
+tasks:
+  -name: Print Hello World
+  anisble.builtin.debug:
+    msg: Hello World
