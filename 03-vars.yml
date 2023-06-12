@@ -1,0 +1,8 @@
+- name: Declare Variable
+  hosts: all
+  vars:
+    URL: google.com
+  tasks:
+    - name: Print the url variable
+      ansible.builtin.debug:
+        msg: URL - {{ URL }}
