@@ -6,3 +6,16 @@
     - name: Print the url variable
       ansible.builtin.debug:
         msg: URL - {{ URL }}
+
+
+- name: Register Variable
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Shell command
+      ansible.builtin.shell: uptime
+      register: output
+
+    - name: print o/p
+      ansible.builtin.debug:
+        msg: "{{ output.stdout | split(' ') | last }}"
