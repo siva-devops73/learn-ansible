@@ -1,0 +1,15 @@
+- name: Demo on templates
+  hosts: localhost
+  connection: local
+  vars:
+    fruits:
+      - name: apple
+        quantity: 100
+      - name: banana
+        quantity: 200
+
+- tasks:
+    - name: copy file
+      ansible.builtin.template:
+        src: test.txt
+        dest: /tmp/test.txt
